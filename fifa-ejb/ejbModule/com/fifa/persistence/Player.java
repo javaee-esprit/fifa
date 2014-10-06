@@ -2,18 +2,22 @@ package com.fifa.persistence;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table( name = "t_player" )
@@ -30,6 +34,8 @@ public class Player implements Serializable{
 	private String description;
 	
 	private Team team;
+	
+	private List<Skill> skills;
 	
 	public Player() {
 	}
@@ -130,6 +136,23 @@ public class Player implements Serializable{
 
 	public void setTeam(Team team) {
 		this.team = team;
+	}
+
+
+	@ManyToMany
+	@JoinTable( name = "t_player_skill",
+		joinColumns = {@JoinColumn( name = "player_fk")},
+		inverseJoinColumns = {@JoinColumn(name = "skill_fk" )},
+		uniqueConstraints = @UniqueConstraint(columnNames = {"player_fk", "skill_fk"})
+			)
+	public List<Skill> getSkills() {
+		return skills;
+	}
+
+
+
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
 	}
 
 

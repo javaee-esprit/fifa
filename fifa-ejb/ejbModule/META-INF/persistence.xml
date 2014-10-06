@@ -4,6 +4,10 @@
 		<jta-data-source>java:/fifaDS</jta-data-source>
 		<class>com.fifa.persistence.Player</class>
 		<class>com.fifa.persistence.Team</class>
+		<class>com.fifa.persistence.User</class>
+		<class>com.fifa.persistence.Employee</class>
+		<class>com.fifa.persistence.Admin</class>
+		<class>com.fifa.persistence.Skill</class>
 		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
