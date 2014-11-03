@@ -8,9 +8,10 @@
 		<class>com.fifa.persistence.Employee</class>
 		<class>com.fifa.persistence.Admin</class>
 		<class>com.fifa.persistence.Skill</class>
+		<class>com.fifa.persistence.Address</class>
 		
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
 		</properties>

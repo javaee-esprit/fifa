@@ -16,7 +16,7 @@ public class _01CreateSomeUsers {
 		Context ctx = null;
 		try{
 			ctx = new InitialContext();
-			proxy = (UserServiceRemote) ctx.lookup("ejb:/fifa-ejb/UserService!com.fifa.services.UserServiceRemote");
+			proxy = (UserServiceRemote) ctx.lookup("ejb:fifa/fifa-ejb/UserService!com.fifa.services.UserServiceRemote");
 		}catch(NamingException ex){
 			ex.printStackTrace();
 		}

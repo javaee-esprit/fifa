@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -36,6 +37,8 @@ public class Player implements Serializable{
 	private Team team;
 	
 	private List<Skill> skills;
+	
+	private Address address;
 	
 	public Player() {
 	}
@@ -153,6 +156,19 @@ public class Player implements Serializable{
 
 	public void setSkills(List<Skill> skills) {
 		this.skills = skills;
+	}
+
+
+
+	@Embedded
+	public Address getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 

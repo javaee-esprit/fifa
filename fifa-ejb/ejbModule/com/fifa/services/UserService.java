@@ -13,7 +13,7 @@ import com.fifa.persistence.Employee;
 import com.fifa.persistence.User;
 
 @Stateless
-public class UserService implements UserServiceRemote {
+public class UserService implements UserServiceRemote, UserServiceLocal {
 	
 	@PersistenceContext
 	private EntityManager em;

@@ -13,6 +13,8 @@ public class Employee extends User implements Serializable {
 	
 	private String firstname;
 	private String lastname;
+	
+	private Address address;
 
 	public Employee() {
 	}
@@ -38,6 +40,15 @@ public class Employee extends User implements Serializable {
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+
+	@Embedded
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
